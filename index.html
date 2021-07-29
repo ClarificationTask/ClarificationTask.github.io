@@ -11,6 +11,8 @@
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Expires" CONTENT="-1">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
       /* Customize container */
@@ -92,7 +94,7 @@
       
 <p>The goal of this shared task is to evaluate the ability of NLP systems to distinguish between plausible and implausible clarifications of an instruction. Such clarifications can be critical to ensure that instructions describe clearly enough what steps must be followed to achieve a specific goal. We set up this task as a cloze task, in which clarifications are presented as possible fillers and systems have to score how well each filler plausibly fits in a given context.</p>
 
-<p>Cloze tasks have become a standard framework for evaluating various discourse-level phenomena in NLP. Some prominent examples include the narrative cloze test (Chambers and Jurafksy, 2008), the story cloze test (Mostafazadeh et al., 2016), and the LAMBADA word prediction task (Paperno et al., 2016). In these tasks, NLP systems are required to make a prediction about the filler of a cloze that is most likely to continue the discourse. However, it is not always clear whether exactly one likely filler exists or how plausible different fillers would be.</p>
+<p>Cloze tasks have become a standard framework for evaluating various discourse-level phenomena in NLP. Some prominent examples include the narrative cloze test <abbr title = "Nathanael Chambers and Dan Jurafsky. 2008. Unsupervised learning of narrative event chains. In Proceedings of the 46th Annual Meeting of the Association of Computational Linguistics, pages 789-797, Columbus, Ohio.">(Chambers and Jurafksy, 2008)</abbr>, the story cloze test <abbr title = "Nasrin Mostafazadeh, Nathanael Chambers, Xiaodong He, Devi Parikh, Dhruv Batra, Lucy Vanderwende, Pushmeet Kohli, and James Allen. 2016. A corpus and cloze evaluation for deeper understanding of commonsense stories. In Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 839-849, San Diego, California.">(Mostafazadeh et al., 2016)</abbr>, and the LAMBADA word prediction task <abbr title = "Denis Paperno, German Kruszewski, Angeliki Lazaridou, Ngoc Quan Pham, Raffaella Bernardi, Sandro Pezzelle, Marco Baroni, Gemma Boleda, and Raquel Fernandez. 2016. The LAMBADA dataset: Word prediction requiring a broad discourse context. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics, pages 1525-1534, Berlin, Germany.">(Paperno et al., 2016)</abbr>. In these tasks, NLP systems are required to make a prediction about the filler of a cloze that is most likely to continue the discourse. However, it is not always clear whether exactly one likely filler exists or how plausible different fillers would be.</p>
 
 <p>This task revolves around judging the plausibility of human-inserted and machine-generated fillers in naturally occurring contexts. Specifically, the contexts are instructional texts on everyday scenarios in which clarifications may have been necessary to eliminate possible misunderstandings. Clarifications were identified using revision histories in which it is possible to observe disambiguations of various semantic and pragmatic phenomena, including implicit, underspecified, and metonymic references, as well as implicit discourse relations and implicit quantifying modifiers.</p>
 
@@ -104,7 +106,7 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>How to Keep a Band Together</h4></div>
+      <div class="panel-heading"><h4 class="panel-title">How to Keep a Band Together</h4></div>
       <div class="panel-body">
 	<b>Steps</b><br/>
 	(...)<br/>
@@ -112,12 +114,12 @@
 	5. If you can't fix a problem completely, come to a compromise so that everybody is at least somewhat happy with <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>.
       </div>	  
       <div class="panel-footer">
-	<ul class="nav navbar-nav list-inline">
-	  <li class="list-inline-item"><p class="text-success">the outcome (4.5)</p></li>
-	  <li class="list-inline-item"><p class="text-success">your efforts (4.0)</p></li>
-	  <li class="list-inline-item"><p class="text-danger">someone else (1.0)</p></li>
-	  <li class="list-inline-item"><p class="text-success">the music (4.0)</p></li>
-	  <li class="list-inline-item"><p class="text-success">the situation (5.0)</p></li>
+	<ul class="list-inline text-truncate">
+	  <li class="list-inline-item"><p class="text-success"><b>the situation (5.0)</b></p></li>
+	  <li class="list-inline-item"><p class="text-success"><b>the outcome (4.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-success"><b>your efforts (4.0)</b></p></li>
+	  <li class="list-inline-item"><p class="text-success"><b>the music (4.0)</b></p></li>
+	  <li class="list-inline-item"><p class="text-danger"><b>someone else (1.0)</b></p></li>
 	</ul>
       </div>
     </div>
@@ -125,7 +127,7 @@
 
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>How to Lighten Birthmarks Naturally</h4></div>
+      <div class="panel-heading"><h4 class="panel-title">How to Lighten Birthmarks Naturally</h4></div>
       <div class="panel-body">
 	<b>Lightening Your Birthmark</b><br/>
 	(...)<br/>
@@ -136,12 +138,12 @@
 	* Repeat this process three times a day.	
       </div>
       <div class="panel-footer">
-	<ul class="nav navbar-nav list-inline">
-	  <li class="list-inline-item"><p class="text-success">the area (4.5)</p></li>
-	  <li class="list-inline-item"><p class="text-danger">your stomach (1.0)</p></li>
-	  <li class="list-inline-item"><p class="text-success">your birthmark (5.0)</p></li>
-	  <li class="list-inline-item"><p class="text-danger">lemon joice (2.0)</p></li>
-	  <li class="list-inline-item"><p class="text-warning">the lemon (2.5)</p></li>
+	<ul class="list-inline text-truncate">
+	  <li class="list-inline-item"><p class="text-success"><b>your birthmark (5.0)</b></p></li>
+	  <li class="list-inline-item"><p class="text-success"><b>the area (4.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-warning"><b>the lemon (2.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-danger"><b>lemon joice (2.0)</b></p></li>
+	  <li class="list-inline-item"><p class="text-danger"><b>your stomach (1.0)</b></p></li>
 	</ul>
       </div>
     </div>
@@ -151,40 +153,44 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>How to Store Jalapenos</h4></div>
-      <div class="panel-body">
-	<b>Warnings</b><br/>
-	* Make sure to wear latex gloves when handling jalapenos or wash <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> thoroughly after handling.
-	You can get a chemical burn if you don't protect yourself.
-      </div>
-      <div class="panel-footer">
-	<ul class="nav navbar-nav list-inline">
-	  <li class="list-inline-item"><p class="text-success">your hands (5.0)</p></li>
-	  <li class="list-inline-item"><p class="text-danger">the floor (1.0)</p></li>
-	  <li class="list-inline-item"><p class="text-warning">the jalapenos (3.0)</p></li>
-	  <li class="list-inline-item"><p class="text-danger">your underwear (1.0)</p></li>
-	  <li class="list-inline-item"><p class="text-danger">your body (1.5)</p></li>
-	</ul>
+      <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#collapse1">How to Store Jalapenos</a></h4></div>
+      <div id="collapse1" class="panel-collapse collapse">
+	<div class="panel-body">
+	  <b>Warnings</b><br/>
+	  * Make sure to wear latex gloves when handling jalapenos or wash <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> thoroughly after handling.
+	    You can get a chemical burn if you don't protect yourself.
+        </div>
+	<div class="panel-footer">
+	  <ul class="list-inline text-truncate">
+	      <li class="list-inline-item"><p class="text-success"><b>your hands (5.0)</b></p></li>
+	      <li class="list-inline-item"><p class="text-warning"><b>the jalapenos (3.0)</b></p></li>
+	      <li class="list-inline-item"><p class="text-danger"><b>your body (1.5)</b></p></li>
+	      <li class="list-inline-item"><p class="text-danger"><b>the floor (1.0)</b></p></li>
+	      <li class="list-inline-item"><p class="text-danger"><b>your underwear (1.0)</b></p></li>
+	  </ul>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>How to Build Deck Stairs</h4></div>
-      <div class="panel-body">
-	<b>Finishing the Deck Stairs</b><br/>
-	1. Screw each stringer to <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> the deck frame with a drill.
-	Use L-brackets and deck screws to attach the stringers to the deck.
-      </div>
-      <div class="panel-footer">
-	<ul class="nav navbar-nav list-inline">
-	  <li class="list-inline-item"><p class="text-success">the base of (4.5)</p></li>
-	  <li class="list-inline-item"><p class="text-success">the top of (5.0)</p></li>
-	  <li class="list-inline-item"><p class="text-warning">the inside of (3.5)</p></li>
-	  <li class="list-inline-item"><p class="text-success">your bottom of (4.5)</p></li>
-	  <li class="list-inline-item"><p class="text-warning">each side of (3.0)</p></li>
-	</ul>
+      <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#collapse2">How to Build Deck Stairs</a></h4></div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+  	  <b>Finishing the Deck Stairs</b><br/>
+	  1. Screw each stringer to <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u> the deck frame with a drill.
+	  Use L-brackets and deck screws to attach the stringers to the deck.
+        </div>
+        <div class="panel-footer">
+	  <ul class="list-inline text-truncate">
+	    <li class="list-inline-item"><p class="text-success"><b>the top of (5.0)</b></p></li>
+	    <li class="list-inline-item"><p class="text-success"><b>the base of (4.5)</b></p></li>
+	    <li class="list-inline-item"><p class="text-success"><b>your bottom of (4.5)</b></p></li>
+	    <li class="list-inline-item"><p class="text-warning"><b>the inside of (3.5)</b></p></li>
+	    <li class="list-inline-item"><p class="text-warning"><b>each side of (3.0)</b></p></li>
+	  </ul>
+        </div>
       </div>
     </div>
     
@@ -195,7 +201,8 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>How to Calibrate Your Sprinklers</h4></div>
+      <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#collapse3">How to Calibrate Your Sprinklers</a></h4></div>
+      <div id="collapse3" class="panel-collapse collapse">
       <div class="panel-body">
 	<b>Steps</b><br/>
 	(...)<br/>
@@ -205,20 +212,22 @@
 	Use a ruler to measure how many inches of water are in the can.
       </div>
       <div class="panel-footer">
-	<ul class="nav navbar-nav list-inline">
-	  <li class="list-inline-item"><p class="text-warning">height (3.5)</p></li>
-	  <li class="list-inline-item"><p class="text-success">diameter (4.5)</p></li>
-	  <li class="list-inline-item"><p class="text-success">width (4.0)</p></li>
-	  <li class="list-inline-item"><p class="text-danger">color (1.0)</p></li>
-	  <li class="list-inline-item"><p class="text-success">size (4.5)</p></li>
+	<ul class="list-inline text-truncate">
+	  <li class="list-inline-item"><p class="text-success"><b>diameter (4.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-success"><b>size (4.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-success"><b>width (4.0)</b></p></li>
+	  <li class="list-inline-item"><p class="text-warning"><b>height (3.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-danger"><b>color (1.0)</b></p></li>
 	</ul>
+      </div>
       </div>
     </div>
   </div>
   
   <div class="col-sm-6">
     <div class="panel panel-default">
-      <div class="panel-heading"><h4>How to Ask Someone to Be Your Groomsman</h4></div>
+      <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" href="#collapse4">How to Ask Someone to Be Your Groomsman</a></h4></div>
+      <div id="collapse4" class="panel-collapse collapse">
       <div class="panel-body">
 	<b>Deciding What to Say or Write</b><br/>
 	1. Ask in person whenever possible.
@@ -228,20 +237,15 @@
 	Even if you’re able to have the conversation in person, it's worth sending a card.
       </div>
       <div class="panel-footer">
-	<ul class="nav navbar-nav list-inline">
-	  <li class="list-inline-item">
-	    <p class="text-danger">busines (1.0)</p><br/>
-	    <p class="text-success">wedding (4.5)</p>
-	  </li>
-	  <li class="list-inline-item">
-	      <p class="text-success">handwritten (4.5)</p><br/>
-	      <p class="text-warning">reminder (2.5)</p>
-	  </li>
-	  <li class="list-inline-item">
-	    <p class="text-danger">birthday (1.0)</p>
-	  </li>
+	<ul class="list-inline text-truncate">
+	  <li class="list-inline-item"><p class="text-success"><b>wedding (4.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-success"><b>handwritten (4.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-warning"><b>reminder (2.5)</b></p></li>
+	  <li class="list-inline-item"><p class="text-danger"><b>business (1.0)</b></p></li>
+	  <li class="list-inline-item"><p class="text-danger"><b>birthday (1.0)</b></p></li>
 	</ul>
       </div>
+    </div>
     </div>
   </div>
 </div>
